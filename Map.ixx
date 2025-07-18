@@ -21,13 +21,13 @@ namespace MSCON
 		auto operator=(const Map& other) -> Map&;
 		auto operator==(const Map& other) const -> bool;
 		auto operator[](const Key& key)->Value&;
-		auto Add(const Key& key, const Value& value) -> void;//Ä¬ÈÏÔÚÎ²ºóÌí¼ÓÔªËØ
-		auto Add(const Key& key, const Value& value, int i) -> void;//ÔÚÖ¸¶¨Î»ÖÃÌí¼ÓÔªËØ
-		auto Remove(const Key& key) -> void;//É¾³ıÖ¸¶¨ÔªËØ
+		auto Add(const Key& key, const Value& value) -> void;//é»˜è®¤åœ¨å°¾åæ·»åŠ å…ƒç´ 
+		auto Add(const Key& key, const Value& value, int i) -> void;//åœ¨æŒ‡å®šä½ç½®æ·»åŠ å…ƒç´ 
+		auto Remove(const Key& key) -> void;//åˆ é™¤æŒ‡å®šå…ƒç´ 
 	private:
-		std::unique_ptr<Pair<int, int>[]> Elum; // ÔªËØ´æ´¢µÄÖÇÄÜÖ¸Õë
-		int Sz; // µ±Ç°ÔªËØÊıÁ¿
-		int MaxSz; // ×î´óÈİÁ¿
+		std::unique_ptr<Pair<Key, Value>[]> Elum; // å…ƒç´ å­˜å‚¨çš„æ™ºèƒ½æŒ‡é’ˆ
+		int Sz; // å½“å‰å…ƒç´ æ•°é‡
+		int MaxSz; // æœ€å¤§å®¹é‡
 	};
 
 	template <class Key, class Value>
